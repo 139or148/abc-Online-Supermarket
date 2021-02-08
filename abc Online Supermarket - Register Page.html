@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="utf-8"/>
+<title>abc Online Supermarket - Register Page</title>
+<link rel="stylesheet" href="main website style.css"> <!--All classes refer to this css -->
+</head>
+
+
+
+<body>
+<img src="Image/Background Logo/Company Logo.png" alt="Company Logo" width = "325" height = "100"> 
+<form action="url">
+<a href="#"><button class="login-btn"><h1>Login</h1></button></a>
+</form>
+<p>
+
+<div class="navigation-bar">
+  <a href="abc Online Supermarket - Home Page.html">Home</a>
+
+  <div class="dropdown">
+    <button class="dropbtn_non_product_page">Product</button>
+    <div class="dropdown-content">
+      <a href="abc Online Supermarket - Product(Fruits) Page.html">Fruits</a>
+      <a href="abc Online Supermarket - Product(Snacks) Page.html">Snacks</a>
+      <a href="abc Online Supermarket - Product(Drinks and Beverages) Page.html">Drinks and Beverages</a>
+      <a href="abc Online Supermarket - Product(Wines) Page.html">Wines</a>
+      <a href="abc Online Supermarket - Product(Cleaning Supllies, Health and Beauty) Page.html">Cleaning Supplies, Health and Beauty</a>
+      <a href="abc Online Supermarket - Product(Pets) Page.html">Pets</a>
+    </div>
+  </div>  
+
+  <a href="abc Online Supermarket - Contact Us Page.html">Contact Us</a>
+  <a href="abc Online Supermarket - About Us Page.html">About Us</a>
+  <a href="abc Online Supermarket - Jobs Page.html">Jobs</a>
+  <a class="active" href="abc Online Supermarket - Register Page.html">Register</a> 
+  <a href="abc Online Supermarket - Help Page.html">Help</a>
+
+  <div class="search-container">
+    <input id="search_product_value" type="text" placeholder="Search a Product" onkeyup="find_product()" autocomplete="off"> 
+    <div id="product_list"></div>
+  </div>    
+</div>
+
+<div class="navigation-bar-search-logo">
+  <input type="image" onclick="search_product()" src="Image/Button Logo/Search Logo.png" alt="search_product" width = 40 height = 36>
+</div>
+
+<div class="shopping-cart-logo">
+  <form action="abc Online Supermarket - Shopping Cart Page.html">
+    <input type="image" src="Image/Button Logo/Shopping Cart Logo.png" alt="shopping cart" width = 50 height = 36>
+    <div id="shopping_cart_logo_notification"></div>
+  </form>
+</div>
+
+
+<p>
+<p>
+Register
+
+
+<script src="Product List and Search Function.js"></script>  <!--All search product list and search function refer to this js -->
+<script src="Cart Logo Change Function.js"></script> <!-- The shopping cart logo will change according to this function -->
+
+</body>
+
+</html>

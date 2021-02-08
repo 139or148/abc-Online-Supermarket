@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="utf-8"/>
+<title>abc Online Supermarket - Product(Drinks and Beverages) Page</title>
+<link rel="stylesheet" href="main website style.css"> <!--All classes refer to this css -->
+</head>
+
+
+
+<body>
+<img src="Image/Background Logo/Company Logo.png" alt="Company Logo" width = "325" height = "100"> 
+<form action="url">
+<a href="#"><button class="login-btn"><h1>Login</h1></button></a>
+</form>
+<p>
+
+<div class="navigation-bar">
+  <a href="abc Online Supermarket - Home Page.html">Home</a>
+
+  <div class="dropdown">
+      <button class="dropbtn_product_page">Product</button>
+    <div class="dropdown-content">
+      <a href="abc Online Supermarket - Product(Fruits) Page.html">Fruits</a>
+      <a href="abc Online Supermarket - Product(Snacks) Page.html">Snacks</a>
+      <a href="abc Online Supermarket - Product(Drinks and Beverages) Page.html">Drinks and Beverages</a>
+      <a href="abc Online Supermarket - Product(Wines) Page.html">Wines</a>
+      <a href="abc Online Supermarket - Product(Cleaning Supllies, Health and Beauty) Page.html">Cleaning Supplies, Health and Beauty</a>
+      <a href="abc Online Supermarket - Product(Pets) Page.html">Pets</a>
+    </div>
+  </div>  
+
+  <a href="abc Online Supermarket - Contact Us Page.html">Contact Us</a>
+  <a href="abc Online Supermarket - About Us Page.html">About Us</a>
+  <a href="abc Online Supermarket - Jobs Page.html">Jobs</a>
+  <a href="abc Online Supermarket - Register Page.html">Register</a>
+  <a href="abc Online Supermarket - Help Page.html">Help</a>
+  
+  <div class="search-container">
+    <input id="search_product_value" type="text" placeholder="Search a Product" onkeyup="find_product()" autocomplete="off"> 
+    <div id="product_list"></div>
+  </div>    
+</div>
+
+<div class="navigation-bar-search-logo">
+  <input type="image" onclick="search_product()" src="Image/Button Logo/Search Logo.png" alt="search_product" width = 40 height = 36>
+</div>
+
+<div class="shopping-cart-logo">
+  <form action="abc Online Supermarket - Shopping Cart Page.html">
+    <input type="image" src="Image/Button Logo/Shopping Cart Logo.png" alt="shopping cart" width = 50 height = 36>
+    <div id="shopping_cart_logo_notification"></div>
+  </form>
+</div>
+
+
+<p>
+<p>
+
+
+<!-- Table for showing products -->
+<table border = 1 class="product-table">
+<!-- 1st Row-->
+<tr> 
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Lemon Tea (250mL).png" alt="lemon_tea" width = 210 height = 210
+    onclick='localStorage.setItem("product","Lemon Tea (250mL)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'> 
+    <b>Lemon Tea (250mL)</b><p style="color:red"><u>$4.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Lemon Tea (6 packs - 250ml).png" 
+    alt="lemon_tea_8_packs" width = 210 height = 210
+    onclick='localStorage.setItem("product","Lemon Tea (6 packs - 250ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'> 
+    <b>Lemon Tea (6 packs - 250ml)</b><p style="color:red"><u>$20.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Milk Tea (250 ml).png" alt="milk_tea" width = 210 height = 210
+    onclick='localStorage.setItem("product","Milk Tea (250 ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'> 
+    <b>Milk Tea (250ml)</b><p style="color:red"><u>$5.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Milk Tea (6 packs - 250ml).png" 
+    alt="milk_tea_6_packs" width = 210 height = 210
+    onclick='localStorage.setItem("product","Milk Tea (6 packs - 250ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'> 
+    <b>Milk Tea (6 packs - 250ml)</b><p style="color:red"><u>$25.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Coca (330ml).png" alt="coca" width = 210 height = 210
+    onclick='localStorage.setItem("product","Coca (330ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>    
+    <b>Coca (330ml)</b><p style="color:red"><u>$4.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Coca (8 cans - 330ml).png" 
+    alt="coca_8_cans" width = 210 height = 210
+    onclick='localStorage.setItem("product","Coca (8 cans - 330ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>    
+    <b>Coca (8 cans - 330ml)</b><p style="color:red"><u>$28.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Cream Soda (330ml).png" alt="cream_soda" width = 210 height = 210
+    onclick='localStorage.setItem("product","Cream Soda (330ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>    
+    <b>Cream Soda (330ml)</b><p style="color:red"><u>$4.00</u></p></td> 
+</tr>
+
+<!-- 2nd Row-->
+<tr> 
+  <td>
+  Quantity: <input type="number" id="lemon_tea_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_lemon_tea()" autocomplete="off">
+  <input type ="submit" value="Add" onclick="add_lemon_tea()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="lemon_tea_8_packs_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_lemon_tea_8_packs()" autocomplete="off"> 
+  <input type ="submit" value="Add" onclick="add_lemon_tea_8_packs()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="milk_tea_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_milk_tea()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_milk_tea()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="milk_tea_6_packs_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_milk_tea_6_packs()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_milk_tea_6_packs()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="coca_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_coca()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_coca()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="coca_8_cans_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_coca_8_cans()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_coca_8_cans()" style="cursor: pointer">
+  </td>
+
+  <td>
+  Quantity: <input type="number" id="cream_soda_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_cream_soda()" autocomplete="off"> 
+  <input type ="submit" value="Add" onclick="add_cream_soda()" style="cursor: pointer">
+  </td> 
+</tr>
+
+<!-- 3rd Row-->
+<tr> 
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Cream Soda (8 cans - 330ml).png" 
+    alt="cream_soda_8_cans" width = 210 height = 210
+    onclick='localStorage.setItem("product","Cream Soda (8 cans - 330ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>     
+    <b>Cream Soda (8 cans - 330ml)</b><p style="color:red"><u>$28.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Coffee (240ml).png" 
+    alt="coffee" width = 210 height = 210
+    onclick='localStorage.setItem("product","Coffee (240ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>     
+    <b>Coffee (240ml)</b><p style="color:red"><u>$7.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Coffee (6 cans - 240ml).png" 
+    alt="coffee_6_cans" width = 210 height = 210
+    onclick='localStorage.setItem("product","Coffee (6 cans - 240ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>     
+    <b>Coffee (6 cans - 240ml)</b><p style="color:red"><u>$35.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Distilled Water (500ml).png" 
+    alt="distilled_water" width = 210 height = 210
+    onclick='localStorage.setItem("product","Distilled Water (500ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>     
+    <b>Distilled Water (500ml)</b><p style="color:red"><u>$6.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Mineral Water (500 ml).png" 
+    alt="mineral_water" width = 210 height = 210
+    onclick='localStorage.setItem("product","Mineral Water (500 ml)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>     
+    <b>Mineral Water (500ml)</b><p style="color:red"><u>$6.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Orange Juice (1gal).png" 
+    alt="orange_juice" width = 210 height = 210
+    onclick='localStorage.setItem("product","Orange Juice (1gal)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>     
+    <b>Orange Juice (1gal)</b><p style="color:red"><u>$32.00</u></p></td> 
+
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Apple Juice (1gal).png"
+    alt="apple_juice" width = 210 height = 210
+    onclick='localStorage.setItem("product","Apple Juice (1gal)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>   
+    <b>Apple Juice (1gal)</b><p style="color:red"><u>$32.00</u></p></td> 
+</tr>
+
+<!-- 4th Row-->
+<tr> 
+  <td>
+  Quantity: <input type="number" id="cream_soda_8_cans_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_cream_soda_8_cans()" autocomplete="off">
+  <input type ="submit" value="Add" onclick="add_cream_soda_8_cans()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="coffee_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_coffee()" autocomplete="off"> 
+  <input type ="submit" value="Add" onclick="add_coffee()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="coffee_6_cans_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_coffee_6_cans()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_coffee_6_cans()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="distilled_water_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_distilled_water()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_distilled_water()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="mineral_water_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_mineral_water()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_mineral_water()" style="cursor: pointer">
+  </td> 
+
+  <td>
+  Quantity: <input type="number" id="orange_juice_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_orange_juice()" autocomplete="off">  
+  <input type ="submit" value="Add" onclick="add_orange_juice()" style="cursor: pointer">
+  </td>
+
+  <td>
+  Quantity: <input type="number" id="apple_juice_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_apple_juice()" autocomplete="off"> 
+  <input type ="submit" value="Add" onclick="add_apple_juice()" style="cursor: pointer">
+  </td> 
+</tr>
+
+<!-- 5th Row-->
+<tr>
+  <td><input type="image" src="Image/Product Logo/Drinks and Beverages/Milk (1gal).png" alt="milk" width = 210 height = 210
+    onclick='localStorage.setItem("product","Milk (1gal)"); 
+    window.location.href = "abc Online Supermarket - Serach Product Page.html"'>
+    <b>Milk (1gal)</b><p style="color:red"><u>$40.00</u></p></td> 
+</tr>
+
+<!-- 6th Row-->
+<tr>
+  <td>
+  Quantity: <input type="number" id="milk_quantity" value="" min="1" max="99" style="width: 40px" 
+                   onclick="empty_input_milk()" autocomplete="off"> 
+  <input type ="submit" value="Add" onclick="add_milk()" style="cursor: pointer">
+  </td> 
+</tr>
+</table> 
+
+
+<script>
+//Function for input properties and adding product lists to shopping cart
+function empty_input_lemon_tea(){
+if (document.getElementById("lemon_tea_quantity").value == "")
+  {document.getElementById("lemon_tea_quantity").value = "1"}
+};
+
+function empty_input_lemon_tea_8_packs(){
+if (document.getElementById("lemon_tea_8_packs_quantity").value == "")
+  {document.getElementById("lemon_tea_8_packs_quantity").value = "1"}
+};
+
+function empty_input_milk_tea(){
+if (document.getElementById("milk_tea_quantity").value == "")
+  {document.getElementById("milk_tea_quantity").value = "1"}
+};
+
+function empty_input_milk_tea_6_packs(){
+if (document.getElementById("milk_tea_6_packs_quantity").value == "")
+  {document.getElementById("milk_tea_6_packs_quantity").value = "1"}
+};
+
+function empty_input_coca(){
+if (document.getElementById("coca_quantity").value == "")
+  {document.getElementById("coca_quantity").value = "1"}
+};
+
+function empty_input_coca_8_cans(){
+if (document.getElementById("coca_8_cans_quantity").value == "")
+  {document.getElementById("coca_8_cans_quantity").value = "1"}
+};
+
+function empty_input_cream_soda(){
+if (document.getElementById("cream_soda_quantity").value == "")
+  {document.getElementById("cream_soda_quantity").value = "1"}
+};
+
+function empty_input_cream_soda_8_cans(){
+if (document.getElementById("cream_soda_8_cans_quantity").value == "")
+  {document.getElementById("cream_soda_8_cans_quantity").value = "1"}
+};
+
+function empty_input_coffee(){
+if (document.getElementById("coffee_quantity").value == "")
+  {document.getElementById("coffee_quantity").value = "1"}
+};
+
+function empty_input_coffee_6_cans(){
+if (document.getElementById("coffee_6_cans_quantity").value == "")
+  {document.getElementById("coffee_6_cans_quantity").value = "1"}
+};
+
+function empty_input_distilled_water(){
+if (document.getElementById("distilled_water_quantity").value == "")
+  {document.getElementById("distilled_water_quantity").value = "1"}
+};
+
+function empty_input_mineral_water(){
+if (document.getElementById("mineral_water_quantity").value == "")
+  {document.getElementById("mineral_water_quantity").value = "1"}
+};
+
+function empty_input_orange_juice(){
+if (document.getElementById("orange_juice_quantity").value == "")
+  {document.getElementById("orange_juice_quantity").value = "1"}
+};
+
+function empty_input_apple_juice(){
+if (document.getElementById("apple_juice_quantity").value == "")
+  {document.getElementById("apple_juice_quantity").value = "1"}
+};
+
+function empty_input_milk(){
+if (document.getElementById("milk_quantity").value == "")
+  {document.getElementById("milk_quantity").value = "1"}
+};
+
+
+Product_add_Message = "Product has been added to your shopping cart!";  
+Warning_Message = "Fail to add product! (Please enter a positive integer)"; 
+
+if (localStorage.getItem("item_list") == null) 
+  {var photo_list = [];
+   var item_list = []; 
+   var quantity_list = []; 
+   var price_list = [];
+   var subtotal_list = []
+  }
+else 
+  {var photo_list = [localStorage.getItem("photo_list")];
+   var item_list = [localStorage.getItem("item_list")];
+   var quantity_list = [localStorage.getItem("quantity_list")];
+   var price_list = [localStorage.getItem("price_list")];
+   var subtotal_list = [localStorage.getItem("subtotal_list")]
+  };
+
+function add_lemon_tea() {
+  if (Number(document.getElementById("lemon_tea_quantity").value)>0 & Number.isInteger(Number(document.getElementById("lemon_tea_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Lemon Tea (250mL).png" alt="lemon_tea" width = 90 height = 90>');
+    item_list.push("Lemon Tea (250mL)");
+    quantity_list.push(Number(document.getElementById("lemon_tea_quantity").value));
+    price_list.push("$4");
+    subtotal_list.push("$"+4*(Number(document.getElementById("lemon_tea_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };    
+  document.getElementById("lemon_tea_quantity").value = "";
+  location.reload()
+  };
+
+function add_lemon_tea_8_packs() {
+  if (Number(document.getElementById("lemon_tea_8_packs_quantity").value)>0 & Number.isInteger(Number(document.getElementById("lemon_tea_8_packs_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Lemon Tea (6 packs - 250ml).png" alt="lemon_tea_8_packs" width = 90 height = 90>');
+    item_list.push("Lemon Tea (6 packs - 250ml )");
+    quantity_list.push(Number(document.getElementById("lemon_tea_8_packs_quantity").value));
+    price_list.push("$20");
+    subtotal_list.push("$"+20*(Number(document.getElementById("lemon_tea_8_packs_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("lemon_tea_8_packs_quantity").value = "";
+  location.reload()
+  };
+
+function add_milk_tea() {
+  if (Number(document.getElementById("milk_tea_quantity").value)>0 & Number.isInteger(Number(document.getElementById("milk_tea_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Milk Tea (250 ml).png" alt="milk_tea" width = 90 height = 90>');
+    item_list.push("Milk Tea (250 ml)");
+    quantity_list.push(Number(document.getElementById("milk_tea_quantity").value));
+    price_list.push("$5");
+    subtotal_list.push("$"+5*(Number(document.getElementById("milk_tea_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("milk_tea_quantity").value = "";
+  location.reload()
+  };
+
+function add_milk_tea_6_packs() {
+  if (Number(document.getElementById("milk_tea_6_packs_quantity").value)>0 & Number.isInteger(Number(document.getElementById("milk_tea_6_packs_quantity").    value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Milk Tea (6 packs - 250ml).png" alt="milk_tea_6_packs" width = 90 height = 90>');
+    item_list.push("Milk Tea (6 packs - 250ml)");
+    quantity_list.push(Number(document.getElementById("milk_tea_6_packs_quantity").value));
+    price_list.push("$25");
+    subtotal_list.push("$"+25*(Number(document.getElementById("milk_tea_6_packs_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("milk_tea_6_packs_quantity").value = "";
+  location.reload()
+  };
+
+function add_coca() {
+  if (Number(document.getElementById("coca_quantity").value)>0 & Number.isInteger(Number(document.getElementById("coca_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Coca (330ml).png" alt="coca" width = 90 height = 90>');
+    item_list.push("Coca (330ml)");
+    quantity_list.push(Number(document.getElementById("coca_quantity").value));
+    price_list.push("$4");
+    subtotal_list.push("$"+4*(Number(document.getElementById("coca_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("coca_quantity").value = "";
+  location.reload()
+  };  
+
+function add_coca_8_cans() {
+  if (Number(document.getElementById("coca_8_cans_quantity").value)>0 & Number.isInteger(Number(document.getElementById("coca_8_cans_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Coca (8 cans - 330ml).png" alt="coca_8_cans" width = 90 height = 90>');
+    item_list.push("Coca (8 cans - 330ml)");
+    quantity_list.push(Number(document.getElementById("coca_8_cans_quantity").value));
+    price_list.push("$28");
+    subtotal_list.push("$"+28*(Number(document.getElementById("coca_8_cans_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("coca_8_cans_quantity").value = "";
+  location.reload()
+  };  
+
+function add_cream_soda() {  
+  if (Number(document.getElementById("cream_soda_quantity").value)>0 & Number.isInteger(Number(document.getElementById("cream_soda_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Cream Soda (330ml).png" alt="cream_soda" width = 90 height = 90>');
+    item_list.push("Cream Soda (330ml)");
+    quantity_list.push(Number(document.getElementById("cream_soda_quantity").value));
+    subtotal_list.push("$"+4*(Number(document.getElementById("cream_soda_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    price_list.push("$4");
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("cream_soda_quantity").value = "";
+  location.reload()
+  };
+
+function add_cream_soda_8_cans() {  
+  if (Number(document.getElementById("cream_soda_8_cans_quantity").value)>0 & Number.isInteger(Number(document.getElementById("cream_soda_8_cans_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Cream Soda (8 cans - 330ml).png" alt="cream_soda_8_cans" width = 90 height = 90>');
+    item_list.push("Cream Soda (8 cans - 330ml)");
+    quantity_list.push(Number(document.getElementById("cream_soda_8_cans_quantity").value));
+    subtotal_list.push("$"+28*(Number(document.getElementById("cream_soda_8_cans_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    price_list.push("$28");
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("cream_soda_8_cans_quantity").value = "";
+  location.reload()
+  };
+
+function add_coffee() {  
+  if (Number(document.getElementById("coffee_quantity").value)>0 & Number.isInteger(Number(document.getElementById("coffee_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Coffee (240ml).png" alt="coffee" width = 90 height = 90>');
+    item_list.push("Coffee (240ml)");
+    quantity_list.push(Number(document.getElementById("coffee_quantity").value));
+    price_list.push("$7");
+    subtotal_list.push("$"+7*(Number(document.getElementById("coffee_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("coffee_quantity").value = "";
+  location.reload()
+  };
+
+function add_coffee_6_cans() {  
+  if (Number(document.getElementById("coffee_6_cans_quantity").value)>0 & Number.isInteger(Number(document.getElementById("coffee_6_cans_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Coffee (6 cans - 240ml).png" alt="coffee_6_cans" width = 90 height = 90>');
+    item_list.push("Coffee (6 cans - 240ml)");
+    quantity_list.push(Number(document.getElementById("coffee_6_cans_quantity").value));
+    price_list.push("$35");
+    subtotal_list.push("$"+35*(Number(document.getElementById("coffee_6_cans_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("coffee_6_cans_quantity").value = "";
+  location.reload()
+  };
+
+function add_distilled_water() { 
+  if (Number(document.getElementById("distilled_water_quantity").value)>0 & Number.isInteger(Number(document.getElementById("distilled_water_quantity").value))) {
+    alert(Product_add_Message); 
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Distilled Water (500ml).png" alt="distilled_water" width = 90 height = 90>'); 
+    item_list.push("Distilled Water (500ml)");
+    quantity_list.push(Number(document.getElementById("distilled_water_quantity").value));
+    price_list.push("$6");
+    subtotal_list.push("$"+6*(Number(document.getElementById("distilled_water_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("distilled_water_quantity").value = "";
+  location.reload()
+  }
+
+function add_mineral_water() { 
+  if (Number(document.getElementById("mineral_water_quantity").value)>0 & Number.isInteger(Number(document.getElementById("mineral_water_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Mineral Water (500 ml).png" alt="mineral_water" width = 90 height = 90>');
+    item_list.push("Mineral Water (500 ml)");
+    quantity_list.push(Number(document.getElementById("mineral_water_quantity").value));
+    price_list.push("$6");
+    subtotal_list.push("$"+6*(Number(document.getElementById("mineral_water_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("mineral_water_quantity").value = "";
+  location.reload()
+  }
+
+function add_orange_juice() { 
+  if (Number(document.getElementById("orange_juice_quantity").value)>0 & Number.isInteger(Number(document.getElementById("orange_juice_quantity").value))) {
+    alert(Product_add_Message);  
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Orange Juice (1gal).png" alt="orange_juice" width = 90 height = 90>');
+    item_list.push("Orange Juice (1gal)");
+    quantity_list.push(Number(document.getElementById("orange_juice_quantity").value));
+    price_list.push("$32");
+    subtotal_list.push("$"+32*(Number(document.getElementById("orange_juice_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("orange_juice_quantity").value = "";
+  location.reload()
+  }
+
+function add_apple_juice() { 
+  if (Number(document.getElementById("apple_juice_quantity").value)>0 & Number.isInteger(Number(document.getElementById("apple_juice_quantity").value))) {
+    alert(Product_add_Message); 
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Apple Juice (1gal).png" alt="apple_juice" width = 90 height = 90>'); 
+    item_list.push("Apple Juice (1gal)");
+    quantity_list.push(Number(document.getElementById("apple_juice_quantity").value));
+    price_list.push("$32");
+    subtotal_list.push("$"+32*(Number(document.getElementById("apple_juice_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("apple_juice_quantity").value = "";
+  location.reload()
+  }
+
+function add_milk() { 
+  if (Number(document.getElementById("milk_quantity").value)>0 & Number.isInteger(Number(document.getElementById("milk_quantity").value))) {
+    alert(Product_add_Message); 
+    photo_list.push('<img src = "Image/Product Logo/Drinks and Beverages/Milk (1gal).png" alt="milk" width = 90 height = 90>'); 
+    item_list.push("Milk (1gal)");
+    quantity_list.push(Number(document.getElementById("milk_quantity").value));
+    price_list.push("$40");
+    subtotal_list.push("$"+40*(Number(document.getElementById("milk_quantity").value)));
+    localStorage.setItem("photo_list", photo_list);
+    localStorage.setItem("item_list", item_list);
+    localStorage.setItem("quantity_list", quantity_list);
+    localStorage.setItem("price_list", price_list);
+    localStorage.setItem("subtotal_list", subtotal_list)
+    }
+  else {
+    alert(Warning_Message)    
+    };
+  document.getElementById("milk_quantity").value = "";
+  location.reload()
+  }   
+</script>
+
+
+<script src="Product List and Search Function.js"></script>  <!--All search product list and search function refer to this js -->
+<script src="Cart Logo Change Function.js"></script> <!-- The shopping cart logo will change according to this function -->
+
+<br>
+<br>
+</body>
+
+</html>
+
+
+
+
